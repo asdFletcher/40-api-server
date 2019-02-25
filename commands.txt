@@ -1,0 +1,55 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Local style
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+POST requests:
+echo '{"name":"Red Sox"}' | http post :3002/api/v1/teams
+echo '{"name":"Yankees"}' | http post :3002/api/v1/teams
+echo '{"name":"Mariners"}' | http post :3002/api/v1/teams
+
+echo '{"bats":"R","name":"Joe Dimaggio","position":"C","team":"Red Sox","throws":"R"}' | http post :3002/api/v1/players
+echo '{"bats":"L","name":"Ichiro Suzuki","position":"1B","team":"Mariners","throws":"R"}' | http post :3002/api/v1/players
+echo '{"bats":"L","name":"Babe Ruth","position":"P","team":"Yankees","throws":"R"}' | http post :3002/api/v1/players
+echo '{"bats":"R","name":"Cy Young","position":"2B","team":"Giants","throws":"R"}' | http post :3002/api/v1/players
+
+GET requests
+http :3002/api/v1/players
+http :3002/api/v1/teams
+
+http :3002/api/v1/players/5c6a81196a66327ee912fdd0
+
+PUT requests
+echo '{"bats":"R","name":"Cie 🦀 Young","position":"2B","team":"Giants","throws":"R"}' | http put :3002/api/v1/players/5c6a857cc0673080d43ad116
+
+
+DELETE requests:
+http delete :3002/api/v1/players/5c6a8538a1203f80a0d30b7a
+http delete :3002/api/v1/players/5c6a81166a66327ee912fdce
+http delete :3002/api/v1/players/5c6a7ed2bbd3b47e18bb990c
+
+Mongo cheatsheet:
+https://github.com/codefellows/seattle-javascript-401d28/blob/master/reference/mongo-cheatsheet.md
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Heroku style
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+echo '{"bats":"R","name":"Joe Dimaggio","position":"C","team":"Red Sox","throws":"R"}' | http post https://api-with-authentication.herokuapp.com/api/v1/players
+echo '{"bats":"L","name":"Ichiro Suzuki","position":"1B","team":"Mariners","throws":"R"}' | http post https://api-with-authentication.herokuapp.com/api/v1/players
+echo '{"bats":"L","name":"Babe Ruth","position":"P","team":"Yankees","throws":"R"}' | http post https://api-with-authentication.herokuapp.com/api/v1/players
+echo '{"bats":"R","name":"Cy Young","position":"2B","team":"Giants","throws":"R"}' | http post https://api-with-authentication.herokuapp.com/api/v1/players
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+************************************************************************************
+
+Database setup:
+
+.env file:
+MONGODB_URI=mongodb://localhost:27017/dashboard
+PORT=3000
+
+1. Run all the above team and player post requests
+
+************************************************************************************
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
